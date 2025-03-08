@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen HTML</title>
+    <style>
+        body {
+            background-image: url('rektorat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.54);
+            background-blend-mode: darken;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: #3333cc;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            flex-direction: row;
+            position: relative;
+        }
+        header img {
+            height: 90px;
+            margin-right: 15px;
+        }
+        .header-text {
+            text-align: center;
+        }
+        .year {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .burger-menu {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .menu-list {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            background: white;
+            color: black;
+            list-style: none;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .menu-list.show {
+            display: block;
+            opacity: 1;
+            transform: scaleY(1);
+        }
+        .menu-list li {
+            padding: 10px 15px;
+        }
+        .menu-list a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            transition: color 0.2s ease-in-out;
+        }
+        .menu-list a:hover {
+            color: #3333cc;
+        }
+        main {
+            padding: 20px;
+            text-align: left;
+        }
+        .info-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-content img {
+            height: 80px;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .burger-menu {
+                top: 10px;
+                right: 10px;
+            }
+            .menu-list {
+                right: 10px;
+                top: 40px;
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+    <header>
+        <img src="unp.png" alt="Logo UNP">
+        <div class="header-text">
+            <h2> Seleksi Penerimaan Calon Mahasiswa Baru Universitas Negeri Padang</h2>
+            <div class="year">2025</div>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu(event)">☰ Menu</div>
+        <ul class="menu-list" id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Informasi</a></li>
+            <li><a href="daftar.html">Pendaftaran</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="info-box">
+            <h2>1. Jalur Penerimaan</h2>
+            <p>Terdapat beberapa jalur masuk yang dapat diikuti oleh calon mahasiswa, masing-masing dengan kriteria dan prosedur yang berbeda.</p>
+            <p>a. SNBP (Seleksi Nasional Berdasarkan Prestasi) - Jalur seleksi berdasarkan prestasi akademik dan non-akademik selama di sekolah.</p>
+            <p>b. SNBT (Seleksi Nasional Berdasarkan Tes) - Jalur seleksi yang menggunakan ujian berbasis komputer untuk menilai kemampuan akademik calon mahasiswa.</p>
+            <p>c. SPMB Mandiri - Jalur penerimaan yang diselenggarakan langsung oleh Universitas Negeri Padang dengan seleksi tersendiri.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2>2. Persyaratan Pendaftaran</h2>
+            <p>Untuk dapat mengikuti seleksi, calon mahasiswa harus memenuhi beberapa persyaratan berikut:</p>
+            <p>a. Lulusan SMA/SMK/MA atau sederajat.</p>
+            <p>b. Memiliki NISN yang terdaftar dalam sistem pendidikan nasional.</p>
+            <p>c. Mengikuti prosedur pendaftaran sesuai jalur yang dipilih, termasuk pengisian data dan pengumpulan dokumen.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2>3. Jadwal Pendaftaran</h2>
+            <p>Berikut adalah jadwal resmi pendaftaran untuk masing-masing jalur masuk:</p>
+            <p>a. SNBP: Januari - Februari 2025.</p>
+            <p>b. SNBT: Maret - Mei 2025.</p>
+            <p>c. SPMB Mandiri: Juni - Agustus 2025.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2>4. Biaya Pendaftaran</h2>
+            <p>Biaya pendaftaran berbeda untuk setiap jalur seleksi. Pastikan untuk melakukan pembayaran sesuai ketentuan.</p>
+            <p>a. SNBP: Gratis.</p>
+            <p>b. SNBT: Rp 200.000.</p>
+            <p>c. SPMB Mandiri: Rp 300.000.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2>5. Fakultas</h2>
+            <p>Universitas Negeri Padang memiliki berbagai fakultas dengan beragam program studi unggulan.</p>
+            <p>a. Fakultas Ilmu Pendidikan.</p>
+            <p>b. Fakultas Matematika dan Ilmu Pengetahuan Alam.</p>
+            <p>c. Fakultas Teknik.</p>
+            <p>d. Fakultas Ilmu Keolahragaan.</p>
+            <p>e. Fakultas Bahasa dan Seni.</p>
+            <p>f. Fakultas Ekonomi.</p>
+            <p>g. Fakultas Pariwisata dan Perhotelan.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2>6. Beasiswa</h2>
+            <p>Untuk mendukung mahasiswa berprestasi dan mereka yang membutuhkan bantuan finansial, tersedia berbagai program beasiswa.</p>
+            <p>a. KIP Kuliah - Beasiswa bagi mahasiswa berprestasi dengan keterbatasan ekonomi.</p>
+            <p>b. Beasiswa Unggulan - Beasiswa bagi mahasiswa yang memiliki pencapaian luar biasa di bidang akademik maupun non-akademik.</p>
+            <p>c. Beasiswa Prestasi Akademik - Beasiswa untuk mahasiswa yang menunjukkan hasil akademik terbaik selama perkuliahan.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Website: <a href="https://unp.ac.id" style="color: white;">https://unp.ac.id</a></p>
+            <p>Email: info@unp.ac.id</p>
+            <p>Telepon: (0751) 7058697</p>
+            <p>Alamat: Jl. Prof. Dr. Hamka, Air Tawar, Padang, Sumatera Barat</p>
+            <img src="unp.png" alt="Logo UNP">
+        </div>
+    </footer>
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        function closeMenu(event) {
+            var menu = document.getElementById("menu");
+            var burger = document.querySelector(".burger-menu");
+            if (!menu.contains(event.target) && !burger.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        }
+    </script>
+</body>
+</html>
